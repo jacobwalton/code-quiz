@@ -1,7 +1,6 @@
 // var timeLeft = document.getElementById("timer")
 // var startButton = document.getElementById("start-button")
 var questions = document.getElementById("questions")
-var choices = document.getElementById("choices")
 var notification = document.getElementById("notification")
 var completePage = document.getElementsByClassName("complete-page")
 var score = document.getElementById("score")
@@ -11,6 +10,7 @@ var highScores = document.getElementsByClassName("high-scores")
 var scoreTable = document.getElementById("score-table")
 var startPage = document.querySelector("#start-page")
 var questionPage = document.querySelector("#questions")
+var questionText = document.querySelector("#question-text")
 
 
 document.getElementById("start-button").addEventListener("click",function(){
@@ -26,6 +26,16 @@ var triggerTime = setInterval(function(){
 }, 1000);
 startPage.style.display = "none";
 questionPage.style.display = "block"
-
-
 });
+
+
+var questionText = document.querySelector("#question-text");
+questionText.textContent="An external Javascript MUST include which of the following?";
+var answerOne = document.querySelector("#answer-one");
+answerOne.textContent="<script> </script>";
+var answerTwo = document.querySelector("#answer-two");
+answerTwo.textContent="A link to your html";
+var answerThree = document.querySelector("#answer-three");
+answerThree.textContent="console.log";
+var answerFour = document.querySelector("#answer-four");
+answerFour.textContent="None of the Above";
