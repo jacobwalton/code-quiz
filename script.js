@@ -1,7 +1,7 @@
 // var timeLeft = document.getElementById("timer")
 // var startButton = document.getElementById("start-button")
 var notification = document.querySelector("#notification")
-var completePage = document.getElementsByClassName("complete-page")
+var completePage = document.querySelector(".complete-page")
 var score = document.getElementById("score")
 var nameInput = document.querySelector("#name-input")
 var submit = document.getElementById("submit")
@@ -12,7 +12,7 @@ var questionOne = document.querySelector("#question-one")
 var questionTwo = document.querySelector("#question-two")
 var questionThree = document.querySelector("#question-three")
 var questionFour = document.querySelector("#question-four")
-var questionFive = document.querySelector("#question-four")
+var questionFive = document.querySelector("#question-five")
 var questionOneText = document.querySelector("#question-one-text")
 var questionTwoText = document.querySelector("#question-two-text")
 var questionThreeText = document.querySelector("#question-three-text")
@@ -20,23 +20,28 @@ var questionFourText = document.querySelector("#question-four-text")
 var questionFiveText = document.querySelector("#question-five-text")
 
 
-document.getElementById("start-button").addEventListener("click", function () {
 
-    timeLeft = 75;
+var timeLeft =75;
+    document.getElementById("start-button").addEventListener("click", function () {
 
     var triggerTime = setInterval(function () {
+       
+        if (timeLeft !==0){
         document.getElementById("timer").innerHTML = timeLeft--;
-        console.log(timeLeft);
-        if (timeLeft == 0)
-            clearInterval(triggerTime);
-
+        }
+            else if (timeLeft == 0){
+                clearInterval(timeLeft);
+            }
+            else if (timeLeft == 0){
+                clearInterval(timeLeft);
+            }
     }, 1000);
     startPage.style.display = "none";
     questionOne.style.display = "block"
 });
 
 function notificationFunction() {
-    setTimeout(function(){notification.style.display = "none";}, 2000);
+    setTimeout(function () { notification.style.display = "none"; }, 500);
 }
 var questionOneText = document.querySelector("#question-one-text");
 questionOneText.textContent = "An external Javascript file MUST include which of the following?";
@@ -81,10 +86,7 @@ qOneAFour.addEventListener("click", function () {
     notificationFunction();
 })
 
-
-
-
-var questionTwoText = document.querySelector("#question-text");
+var questionTwoText = document.querySelector("#question-two-text");
 questionTwoText.textContent = "What characters are used to wrap around an array?";
 var qTwoAOne = document.querySelector("#q-two-a-one");
 qTwoAOne.textContent = "()";
@@ -98,8 +100,8 @@ qTwoAFour.textContent = "//";
 qTwoAOne.addEventListener("click", function () {
     notification.style.display = "block";
     notification.textContent = "Incorrect";
-    questionOne.style.display = "none";
-    questionTwo.style.display = "block";
+    questionTwo.style.display = "none";
+    questionThree.style.display = "block";
     timeLeft = timeLeft - 10;
     notificationFunction();
 })
@@ -107,17 +109,16 @@ qTwoAOne.addEventListener("click", function () {
 qTwoATwo.addEventListener("click", function () {
     notification.style.display = "block";
     notification.textContent = "Correct";
-    questionOne.style.display = "none";
-    questionTwo.style.display = "block";
+    questionTwo.style.display = "none";
+    questionThree.style.display = "block";
     notificationFunction();
 })
-
 
 qTwoAThree.addEventListener("click", function () {
     notification.style.display = "block";
     notification.textContent = "Incorrect";
-    questionOne.style.display = "none";
-    questionTwo.style.display = "block";
+    questionTwo.style.display = "none";
+    questionThree.style.display = "block";
     timeLeft = timeLeft - 10;
     notificationFunction();
 })
@@ -125,45 +126,146 @@ qTwoAThree.addEventListener("click", function () {
 qTwoAFour.addEventListener("click", function () {
     notification.style.display = "block";
     notification.textContent = "Incorrect";
-    questionOne.style.display = "none";
-    questionTwo.style.display = "block";
+    questionTwo.style.display = "none";
+    questionThree.style.display = "block";
     timeLeft = timeLeft - 10;
     notificationFunction();
 })
 
-// var questionThreeText = document.querySelector("#question-text");
-// questionThreeText.textContent = "How would you declare a Javascript variable called 'count'";
-// var qThreeAOne = document.querySelector("#q-three-a-one");
-// qThreeAOne.textContent = "variable = count";
-// var qThreeATwo = document.querySelector("#q-three-a-two");
-// qThreeATwo.textContent = "variable count";
-// var qThreeAThree = document.querySelector("#q-three-a-three");
-// qThreeAThree.textContent = "var count";
-// var qThreeAFour = document.querySelector("#q-three-a-four");
-// qThreeAFour.textContent = "None of the above";
+var questionThreeText = document.querySelector("#question-three-text");
+questionThreeText.textContent = "How would you declare a Javascript variable called 'count'";
+var qThreeAOne = document.querySelector("#q-three-a-one");
+qThreeAOne.textContent = "variable = count";
+var qThreeATwo = document.querySelector("#q-three-a-two");
+qThreeATwo.textContent = "variable count";
+var qThreeAThree = document.querySelector("#q-three-a-three");
+qThreeAThree.textContent = "var count";
+var qThreeAFour = document.querySelector("#q-three-a-four");
+qThreeAFour.textContent = "None of the above";
 
+qThreeAOne.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionThree.style.display = "none";
+    questionFour.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
 
+qThreeATwo.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionThree.style.display = "none";
+    questionFour.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
 
-// var questionFourText = document.querySelector("#question-text");
-// questionFourText.textContent = "Which of the following is NOT a Javascript value?";
-// var qFourAOne = document.querySelector("#q-four-a-one");
-// qFourAOne.textContent = "Number";
-// var qFourATwo = document.querySelector("#q-four-a-two");
-// qFourATwo.textContent = "String";
-// var qFourAThree = document.querySelector("#q-four-a-three");
-// qFourAThree.textContent = "Operator";
-// var qFourAFour = document.querySelector("#q-four-a-four");
-// qFourAFour.textContent = "Boolean";
+qThreeAThree.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Correct";
+    questionThree.style.display = "none";
+    questionFour.style.display = "block";
+    notificationFunction();
+})
 
+qThreeAFour.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionThree.style.display = "none";
+    questionFour.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
 
+var questionFourText = document.querySelector("#question-four-text");
+questionFourText.textContent = "Which of the following is NOT a Javascript value?";
+var qFourAOne = document.querySelector("#q-four-a-one");
+qFourAOne.textContent = "Number";
+var qFourATwo = document.querySelector("#q-four-a-two");
+qFourATwo.textContent = "String";
+var qFourAThree = document.querySelector("#q-four-a-three");
+qFourAThree.textContent = "Operator";
+var qFourAFour = document.querySelector("#q-four-a-four");
+qFourAFour.textContent = "Boolean";
 
-// var questionFiveText = document.querySelector("#question-text");
-// questionFiveText.textContent = "Javascript is __________";
-// var qFiveAOne = document.querySelector("#q-five-a-one");
-// qFiveAOne.textContent = "Fun";
-// var qFiveATwo = document.querySelector("#q-five-a-two");
-// qFiveATwo.textContent = "Easy";
-// var qFiveAThree = document.querySelector("#q-five-a-three");
-// qFiveAThree.textContent = "Simple";
-// var qFiveAFour = document.querySelector("#q-five-a-four");
-// qFiveAFour.textContent = "The devil";
+qFourAOne.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionFour.style.display = "none";
+    questionFive.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
+
+qFourATwo.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionFour.style.display = "none";
+    questionFive.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
+
+qFourAThree.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Correct";
+    questionFour.style.display = "none";
+    questionFive.style.display = "block";
+    notificationFunction();
+})
+
+qFourAFour.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionFour.style.display = "none";
+    questionFive.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
+
+var questionFiveText = document.querySelector("#question-five-text");
+questionFiveText.textContent = "Javascript is __________";
+var qFiveAOne = document.querySelector("#q-five-a-one");
+qFiveAOne.textContent = "Fun";
+var qFiveATwo = document.querySelector("#q-five-a-two");
+qFiveATwo.textContent = "Easy";
+var qFiveAThree = document.querySelector("#q-five-a-three");
+qFiveAThree.textContent = "Simple";
+var qFiveAFour = document.querySelector("#q-five-a-four");
+qFiveAFour.textContent = "The devil";
+
+qFiveAOne.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionFive.style.display = "none";
+    completePage.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
+
+qFiveATwo.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionFive.style.display = "none";
+    completePage.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
+
+qFiveAThree.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Incorrect";
+    questionFive.style.display = "none";
+    completePage.style.display = "block";
+    timeLeft = timeLeft - 10;
+    notificationFunction();
+})
+
+qFiveAFour.addEventListener("click", function () {
+    notification.style.display = "block";
+    notification.textContent = "Correct";
+    questionFive.style.display = "none";
+    completePage.style.display = "block";
+    clearInterval(timeLeft);
+})
