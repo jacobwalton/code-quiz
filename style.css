@@ -14,6 +14,14 @@ nav{
     font-size: 18px;
 }
 
+#countdown{
+    position: relative;
+    float: right;
+    right: 200px;
+    top: -60px;
+    font-style: italic;
+}
+
 wrapper{
     position: relative;
     top: 60px;
@@ -22,10 +30,26 @@ wrapper{
 }
 
 h1{
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
 }
+.display-none{
+    display: none;
+}
 
+/* first displayed*/
+#start-page{
+text-align: center;
+padding-left: 20%;
+padding-right: 20%;
+display: block;
+}
+
+/* second displayed (after triggered by start)*/
+#questions{
+display: none;
+
+}
 button {
     color: white;
     padding: 10px;
@@ -40,12 +64,10 @@ button {
     display: inline-block;
 }
 button:hover{
-    background-color: rgb(0, 109, 109);
-    border-right: 2px solid lightblue;
-    border-bottom: 2px solid lightblue;
+    background-color:rgb(125, 202, 228) ;
 }
 
-.notification{
+#notification{
     border-top: 2px solid darkgrey;
     text-align: center;
     position: relative;
@@ -55,11 +77,17 @@ button:hover{
     color: darkgrey;
 }
 
-table{
+
+/* third displayed (after time runs out or game's completed) */
+.complete-page{
+    text-align: left;
     margin-left: 30%;
     margin-right: 30%;
-    width: 40%;
     display: none;
+}
+
+#name-input{
+    width: 40%;
 }
 
 #submit{
@@ -71,19 +99,22 @@ table{
     padding: 2px;
 }
 
+
+/* last displayed (after name is submitted) */
+.high-scores{
+    display: none;
+}
+
+table{
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+
+}
+
 th{
     background-color: paleturquoise;
     border-bottom: 5px solid white;
-}
-
-.complete-page{
-    text-align: left;
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-#name-input{
-    width: 40%;
 }
 
 tr{

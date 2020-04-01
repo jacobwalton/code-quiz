@@ -11,19 +11,30 @@
 <body>
     <nav>
         <p>View High Scores</p>
+        <p id="countdown">Time: <span id="timer">75</span></p>
     </nav>
     <wrapper>
-        <h1>
-            <!-- Intro/Questions/Completed/High Scores/  -->
+        <div class="display-none"></div>
+        <div id="start-page">
+            <h1>Javascript quiz</h1>
+            <p id="game-instr">You have <strong>75 seconds</strong> to answer <strong>5 questions</strong>. For each incorrect answer, you will <strong>lose 10 seconds</strong> from your score. See how fast you can get through the quiz before time runs out!</p>
+            <button type="button" id=start-button>Start Now!</button>
+        </div>
 
-        </h1>
-        <p class="buttons">
-            <!-- Btns/answers -->
-            <button type="button"></button>
-        </p>
-        <p class="notification">
-            <!-- Correct/incorrect notifications -->
-        </p>
+        <div id="questions">
+            <h1>
+                <!-- Intro/Questions/Completed/High Scores/  -->
+
+            </h1>
+            <p>
+                <!-- Btns/answers -->
+                <button type="button" id=buttons>test</button>
+            </p>
+            <p id="notification">
+                <!-- Correct/incorrect notifications -->
+            </p>
+        </div>
+
 
         <div class="complete-page">
             <h1 style="text-align: left;">All Done!</h1>
@@ -34,8 +45,9 @@
             <button type="submit" id="submit">Submit</button>
         </div>
 
-        <p class="high-scores">
-            <table>
+        <div class="high-scores">
+        <p>
+            <table id="score-table">
                 <tr>
                     <th>Name</th>
                     <th>Score</th>
@@ -44,9 +56,10 @@
                     <td></td>
                     <td></td>
                 </tr>
-                
+
             </table>
         </p>
+    </div>
     </wrapper>
     <script src="script.js"></script>
 </body>
