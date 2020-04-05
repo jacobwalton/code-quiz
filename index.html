@@ -1,114 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <nav>
-        <p>View High Scores</p>
-        <p id="countdown">Time: <span id="timer">75</span></p>
+      <p>View High Scores</p>
+      <p id="countdown">Time: <span id="timer">75</span></p>
     </nav>
     <wrapper>
-        <div class="display-none"></div>
-        <div id="start-page">
-            <h1>Javascript quiz</h1>
-            <p id="game-instr">You have <strong>75 seconds</strong> to answer <strong>5 questions</strong>. For each
-                incorrect answer, you will <strong>lose 10 seconds</strong> from your score. See how fast you can get
-                through the quiz before time runs out!</p>
-            <button type="button" id=start-button>Start Now!</button>
-        </div>
-
-        <div id="question-one">
-            <h1 id="question-one-text">
-            </h1>
-            <div>
-                <!-- Btns/answers -->
-                <button type="button" class=q-buttons id="q-one-a-one"></button>
-                <button type="button" class=q-buttons id="q-one-a-two"></button>
-                <button type="button" class=q-buttons id="q-one-a-three"></button>
-                <button type="button" class=q-buttons id="q-one-a-four"></button>
-            </div>
-        </div>
-        <div id="question-two">
-            <h1 id="question-two-text">
-            </h1>
-            <div>
-                <!-- Btns/answers -->
-                <button type="button" class=q-buttons id="q-two-a-one"></button>
-                <button type="button" class=q-buttons id="q-two-a-two"></button>
-                <button type="button" class=q-buttons id="q-two-a-three"></button>
-                <button type="button" class=q-buttons id="q-two-a-four"></button>
-            </div>
-        </div>
-        <div id="question-three">
-            <h1 id="question-three-text">
-            </h1>
-            <div>
-                <!-- Btns/answers -->
-                <button type="button" class=q-buttons id="q-three-a-one"></button>
-                <button type="button" class=q-buttons id="q-three-a-two"></button>
-                <button type="button" class=q-buttons id="q-three-a-three"></button>
-                <button type="button" class=q-buttons id="q-three-a-four"></button>
-            </div>
-        </div>
-        <div id="question-four">
-            <h1 id="question-four-text">
-            </h1>
-            <div>
-                <!-- Btns/answers -->
-                <button type="button" class=q-buttons id="q-four-a-one"></button>
-                <button type="button" class=q-buttons id="q-four-a-two"></button>
-                <button type="button" class=q-buttons id="q-four-a-three"></button>
-                <button type="button" class=q-buttons id="q-four-a-four"></button>
-            </div>
-        </div>
-        <div id="question-five">
-            <h1 id="question-five-text">
-            </h1>
-            <div>
-                <!-- Btns/answers -->
-                <button type="button" class=q-buttons id="q-five-a-one"></button>
-                <button type="button" class=q-buttons id="q-five-a-two"></button>
-                <button type="button" class=q-buttons id="q-five-a-three"></button>
-                <button type="button" class=q-buttons id="q-five-a-four"></button>
-            </div>
-        </div>
-        <p id="notification">
-            <!-- Correct/incorrect notifications -->
+      <div class="display-none"></div>
+      <div id="start-page">
+        <h1>Javascript quiz</h1>
+        <p id="game-instr">
+          You have <strong>75 seconds</strong> to answer
+          <strong>5 questions</strong>. For each incorrect answer, you will
+          <strong>lose 10 seconds</strong> from your score. See how fast you can
+          get through the quiz before time runs out!
         </p>
+        <button type="button" id="start-button">Start Now!</button>
+      </div>
 
-
-        <div class="complete-page">
-            <h1 style="text-align: left;">All Done!</h1>
-            <p>
-                Your final score is <span id="score"></span>!
-            </p>
-            <input type="text" name="name-input" id="name-input">
-            <button type="submit" id="submit">Submit</button>
+      <div id="question-one">
+        <h1 id="question-one-text"></h1>
+        <div>
+          <!-- Btns/answers -->
+          <button type="button" class="q-buttons" id="q-one-a-one"></button>
+          <button type="button" class="q-buttons" id="q-one-a-two"></button>
+          <button type="button" class="q-buttons" id="q-one-a-three"></button>
+          <button type="button" class="q-buttons" id="q-one-a-four"></button>
         </div>
-
-        <div class="high-scores">
-            <p>
-                <table id="score-table">
-                    <tr>
-                        <th>Name</th>
-                        <th>Score</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                </table>
-            </p>
+      </div>
+      <div id="question-two">
+        <h1 id="question-two-text"></h1>
+        <div>
+          <!-- Btns/answers -->
+          <button type="button" class="q-buttons" id="q-two-a-one"></button>
+          <button type="button" class="q-buttons" id="q-two-a-two"></button>
+          <button type="button" class="q-buttons" id="q-two-a-three"></button>
+          <button type="button" class="q-buttons" id="q-two-a-four"></button>
         </div>
+      </div>
+      <div id="question-three">
+        <h1 id="question-three-text"></h1>
+        <div>
+          <!-- Btns/answers -->
+          <button type="button" class="q-buttons" id="q-three-a-one"></button>
+          <button type="button" class="q-buttons" id="q-three-a-two"></button>
+          <button type="button" class="q-buttons" id="q-three-a-three"></button>
+          <button type="button" class="q-buttons" id="q-three-a-four"></button>
+        </div>
+      </div>
+      <div id="question-four">
+        <h1 id="question-four-text"></h1>
+        <div>
+          <!-- Btns/answers -->
+          <button type="button" class="q-buttons" id="q-four-a-one"></button>
+          <button type="button" class="q-buttons" id="q-four-a-two"></button>
+          <button type="button" class="q-buttons" id="q-four-a-three"></button>
+          <button type="button" class="q-buttons" id="q-four-a-four"></button>
+        </div>
+      </div>
+      <div id="question-five">
+        <h1 id="question-five-text"></h1>
+        <div>
+          <!-- Btns/answers -->
+          <button type="button" class="q-buttons" id="q-five-a-one"></button>
+          <button type="button" class="q-buttons" id="q-five-a-two"></button>
+          <button type="button" class="q-buttons" id="q-five-a-three"></button>
+          <button type="button" class="q-buttons" id="q-five-a-four"></button>
+        </div>
+      </div>
+      <p id="notification">
+        <!-- Correct/incorrect notifications -->
+      </p>
+
+      <div class="complete-page">
+        <h1 style="text-align: left;">All Done!</h1>
+        <p>Your final score is <span id="score"></span>!</p>
+        <input
+          type="text"
+          name="name-input"
+          id="name-input"
+          placeholder="Enter Name"
+        />
+        <button type="submit" id="submit">Submit</button>
+      </div>
+
+      <div class="high-scores">
+        <h1>High Scores</h1>
+
+        <ul id="score-table"></ul>
+      </div>
     </wrapper>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

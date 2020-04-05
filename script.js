@@ -1,41 +1,43 @@
-// var timeLeft = document.getElementById("timer")
-// var startButton = document.getElementById("start-button")
-var notification = document.querySelector("#notification")
-var completePage = document.querySelector(".complete-page")
-var score = document.getElementById("score")
-var nameInput = document.querySelector("#name-input")
-var submit = document.getElementById("submit")
-var highScores = document.getElementsByClassName("high-scores")
-var scoreTable = document.getElementById("score-table")
-var startPage = document.querySelector("#start-page")
-var questionOne = document.querySelector("#question-one")
-var questionTwo = document.querySelector("#question-two")
-var questionThree = document.querySelector("#question-three")
-var questionFour = document.querySelector("#question-four")
-var questionFive = document.querySelector("#question-five")
-var questionOneText = document.querySelector("#question-one-text")
-var questionTwoText = document.querySelector("#question-two-text")
-var questionThreeText = document.querySelector("#question-three-text")
-var questionFourText = document.querySelector("#question-four-text")
-var questionFiveText = document.querySelector("#question-five-text")
+var notification = document.querySelector("#notification");
+var finalScore = document.querySelector("#score");
+// var finalScore = document.querySelector("#score");
+var completePage = document.querySelector(".complete-page");
+var score = document.getElementById("score");
+var nameInput = document.querySelector("#name-input");
+var submit = document.getElementById("submit");
+var highScores = document.querySelector(".high-scores");
+var scoreTable = document.getElementById("score-table");
+var startPage = document.querySelector("#start-page");
+var questionOne = document.querySelector("#question-one");
+var questionTwo = document.querySelector("#question-two");
+var questionThree = document.querySelector("#question-three");
+var questionFour = document.querySelector("#question-four");
+var questionFive = document.querySelector("#question-five");
+var questionOneText = document.querySelector("#question-one-text");
+var questionTwoText = document.querySelector("#question-two-text");
+var questionThreeText = document.querySelector("#question-three-text");
+var questionFourText = document.querySelector("#question-four-text");
+var questionFiveText = document.querySelector("#question-five-text");
+
+var allScores = []
 
 
+var timeLeft = 75;
+var triggerTime = setInterval(function timer() {
 
-var timeLeft =75;
-    document.getElementById("start-button").addEventListener("click", function () {
+    if (timeLeft !== 0) {
+        document.getElementById("timer").innerHTML = timeLeft--;   
+        document.getElementById("score").innerHTML = timeLeft + 1
+    }
+    else if (timeLeft == 0) {
+        clearInterval(timeLeft);
+    }
 
-    var triggerTime = setInterval(function () {
-       
-        if (timeLeft !==0){
-        document.getElementById("timer").innerHTML = timeLeft--;
-        }
-            else if (timeLeft == 0){
-                clearInterval(timeLeft);
-            }
-            else if (timeLeft == 0){
-                clearInterval(timeLeft);
-            }
-    }, 1000);
+}, 1000);
+
+document.getElementById("start-button").addEventListener("click", function () {
+
+
     startPage.style.display = "none";
     questionOne.style.display = "block"
 });
@@ -89,11 +91,11 @@ qOneAFour.addEventListener("click", function () {
 var questionTwoText = document.querySelector("#question-two-text");
 questionTwoText.textContent = "What characters are used to wrap around an array?";
 var qTwoAOne = document.querySelector("#q-two-a-one");
-qTwoAOne.textContent = "()";
+qTwoAOne.textContent = "( )";
 var qTwoATwo = document.querySelector("#q-two-a-two");
-qTwoATwo.textContent = "[]";
+qTwoATwo.textContent = "[ ]";
 var qTwoAThree = document.querySelector("#q-two-a-three");
-qTwoAThree.textContent = "{}";
+qTwoAThree.textContent = "{ }";
 var qTwoAFour = document.querySelector("#q-two-a-four");
 qTwoAFour.textContent = "//";
 
@@ -242,6 +244,8 @@ qFiveAOne.addEventListener("click", function () {
     completePage.style.display = "block";
     timeLeft = timeLeft - 10;
     notificationFunction();
+    clearInterval(triggerTime);
+    allScores.push(timeLeft + 1);
 })
 
 qFiveATwo.addEventListener("click", function () {
@@ -251,6 +255,8 @@ qFiveATwo.addEventListener("click", function () {
     completePage.style.display = "block";
     timeLeft = timeLeft - 10;
     notificationFunction();
+    clearInterval(triggerTime);
+    allScores.push(timeLeft + 1);
 })
 
 qFiveAThree.addEventListener("click", function () {
@@ -260,6 +266,8 @@ qFiveAThree.addEventListener("click", function () {
     completePage.style.display = "block";
     timeLeft = timeLeft - 10;
     notificationFunction();
+    clearInterval(triggerTime);
+    allScores.push(timeLeft + 1);
 })
 
 qFiveAFour.addEventListener("click", function () {
@@ -267,5 +275,28 @@ qFiveAFour.addEventListener("click", function () {
     notification.textContent = "Correct";
     questionFive.style.display = "none";
     completePage.style.display = "block";
-    clearInterval(timeLeft);
+    notificationFunction();
+    clearInterval(triggerTime);
+    allScores.push(timeLeft + 1);
+    printScores();
 })
+
+
+submit.addEventListener("click", function () {
+    completePage.style.display = "none";
+    highScores.style.display = "block";
+    event.preventDefault();
+
+    var todoText = nameInput + "---";
+
+
+   
+        }
+    )
+    function printScores() {
+        for (var i = 0; i<allScores.length;i++) {
+            var finalScore = allScores[i];
+            var li = document.createElement("li");
+            li.textContent = finalScore + 
+            scoreTable.appendChild(li);
+        }}
